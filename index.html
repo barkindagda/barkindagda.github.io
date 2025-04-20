@@ -52,6 +52,27 @@
       color: #777;
       font-style: italic;
     }
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .video-item {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+    .video-item h4 {
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    video {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
@@ -85,7 +106,31 @@
     <div class="project">
       <h3>Cyclopic AMR Digital Twin Model Load Balancing</h3>
       <p>Digital twin model for an autonomous warehouse robot with advanced load balancing and wheel height control, enabling stability in delivery operations. AI algorithms provide dynamic balancing and precise pitch/roll control for improved efficiency.</p>
-      <div class="media-placeholder">[Insert image or video of Cyclopic AMR here]</div>
+      <div class="video-container">
+        <div class="video-item">
+          <h4>Success Case</h4>
+          <video controls>
+            <source src="cyclopic_success_case.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-item">
+          <h4>Fail Case</h4>
+          <video controls>
+            <source src="cyclopic_fail_case.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="video-container" style="margin-top: 20px;">
+        <div class="video-item">
+          <h4>Physical Robot Demo</h4>
+          <video controls>
+            <source src="robot.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
     </div>
   </section>
 </body>
