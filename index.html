@@ -74,6 +74,12 @@
       border-radius: 5px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+    .small-video {
+      width: 60%;
+      max-width: 300px;
+      display: block;
+      margin: 1rem auto;
+    }
   </style>
 </head>
 <body>
@@ -83,9 +89,11 @@
     <p>AI & Robotics Researcher | PhD in Automotive Engineering</p>
   </header>
   <section>
-    <h2>Qualifications</h2>
-    <p>PhD in Automotive Engineering – University of Surrey</p>
-    <p>BEng in Mechanical Engineering – [Your Previous University]</p>
+    <h2>Qualifications & Awards</h2>
+    <p>2024 - PhD Foundership Award</p>
+    <p>2022-2026 - PhD in Automotive Engineering – University of Surrey, CAV Lab</p>
+    <p>2021-2022 - MSc in Electronic Engineering – University of Surrey, Distinction</p>
+    <p>2017-2021 - BEng (Hons) in Mechanical Engineering – University of Surrey, First Class Honors</p>
   </section>
   <section>
     <h2>Experience</h2>
@@ -97,6 +105,16 @@
     <div class="project">
       <h3>HighwayLLM: Decision-Making and Navigation in Highway Driving with RL-Informed Language Model</h3>
       <p>This study presents a novel approach, HighwayLLM, which harnesses the reasoning capabilities of large language models (LLMs) to predict future waypoints for ego-vehicle navigation, combined with a pre-trained RL model for high-level planning. The method integrates LLM, RL, and PID-based control to create interpretable, safe, and efficient navigation strategies for autonomous driving. [<a href="https://arxiv.org/html/2405.13547v1" target="_blank">View Paper</a>]</p>
+    </div>
+    <div class="project">
+      <h3>Behavioral Cloning Models Reality Check for Autonomous Driving</h3>
+      <p><strong>Mustafa Yildirim, Barkin Dagda, Vinal Asodia, Saber Fallah</strong></p>
+      <p>How effective are recent advancements in autonomous vehicle perception systems when applied to real-world autonomous vehicle control? While numerous vision-based autonomous vehicle systems have been trained and evaluated in simulated environments, there is a notable lack of real-world validation for these systems. This paper addresses this gap by presenting the real-world validation of state-of-the-art perception systems that utilize Behavior Cloning (BC) for lateral control, processing raw image data to predict steering commands. The dataset was collected using a scaled research vehicle and tested on various track setups. Experimental results demonstrate that these methods predict steering angles with low error margins in real-time, indicating promising potential for real-world applications. [<a href="https://arxiv.org/abs/2409.07218" target="_blank">View Paper</a>]</p>
+    </div>
+    <div class="project">
+      <h3>Autonomous Nuclear Material Transportation</h3>
+      <p><strong>Cyclopic</strong></p>
+      <p>A comprehensive feasibility study conducted for Sellafield's Gamechangers Challenge, focusing on secure and reliable systems for autonomous nuclear material transportation in GPS-denied environments. The report evaluates communication solutions (Mesh Networks, SATCOM, and Radio), sensor technologies, localization methods, and collision avoidance strategies. Key contributions include multi-sensor fusion approaches for robust localization, reinforcement learning-based behavioral planning, and redundancy systems to achieve zero-failure transportation of sensitive materials. The study recommends mesh networks for communication reliability, adaptive multi-sensor fusion for localization, and modular reinforcement learning systems for collision avoidance.</p>
     </div>
     <div class="project">
       <h3>GeoVLM: Improving Autonomous Vehicle Geolocalisation Using Vision-Language Matching</h3>
@@ -120,14 +138,12 @@
             Your browser does not support the video tag.
           </video>
         </div>
-        <div class="video-item">
-          <h4>Physical Robot Demo</h4>
-          <video controls>
-            <source src="robot.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
       </div>
+      <h4>Physical Robot Demo</h4>
+      <video controls class="small-video">
+        <source src="robot.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </section>
 </body>
