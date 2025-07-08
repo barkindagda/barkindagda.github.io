@@ -1,222 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Barkin Dagda – Portfolio</title>
-  <style>
-    :root {
-      --primary-color: #2c3e50;
-      --accent-color: #3498db;
-      --bg-light: #f9f9f9;
-      --text-color: #333;
-    }
+<section>
+  <h2>Projects</h2>
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-light);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
+  <div class="project">
+    <h3>HighwayLLM: Decision-Making and Navigation in Highway Driving with RL-Informed Language Model</h3>
+    <p>This study presents a novel approach, HighwayLLM, which harnesses the reasoning capabilities of large language models (LLMs) to predict future waypoints for ego-vehicle navigation, combined with a pre-trained RL model for high-level planning. The method integrates LLM, RL, and PID-based control to create interpretable, safe, and efficient navigation strategies for autonomous driving. [<a href="https://doi.org/10.1016/j.robot.2025.105114" target="_blank">View Paper</a>]</p>
+  </div>
 
-    header {
-      background-color: var(--primary-color);
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
+  <div class="project">
+    <h3>Behavioral Cloning Models Reality Check for Autonomous Driving</h3>
+    <p>How effective are recent advancements in autonomous vehicle perception systems when applied to real-world autonomous vehicle control? While numerous vision-based autonomous vehicle systems have been trained and evaluated in simulated environments, there is a notable lack of real-world validation for these systems. This paper addresses this gap by presenting the real-world validation of state-of-the-art perception systems that utilize Behavior Cloning (BC) for lateral control, processing raw image data to predict steering commands. The dataset was collected using a scaled research vehicle and tested on various track setups. Experimental results demonstrate that these methods predict steering angles with low error margins in real-time, indicating promising potential for real-world applications. [<a href="https://arxiv.org/abs/2409.07218" target="_blank">View Paper</a>]</p>
+  </div>
 
-    header img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      margin-bottom: 1rem;
-    }
+  <div class="project">
+    <h3>Autonomous Nuclear Material Transportation</h3>
+    <p><strong>Cyclopic</strong></p>
+    <p>A comprehensive feasibility study conducted for Sellafield's Gamechangers Challenge, focusing on secure and reliable systems for autonomous nuclear material transportation in GPS-denied environments. The report evaluates communication solutions (Mesh Networks, SATCOM, and Radio), sensor technologies, localization methods, and collision avoidance strategies. Key contributions include multi-sensor fusion approaches for robust localization, reinforcement learning-based behavioral planning, and redundancy systems to achieve zero-failure transportation of sensitive materials. The study recommends mesh networks for communication reliability, adaptive multi-sensor fusion for localization, and modular reinforcement learning systems for collision avoidance.</p>
+  </div>
 
-    header h1 {
-      margin: 0.2rem 0;
-      font-size: 2rem;
-    }
+  <div class="project">
+    <h3>GeoVLM: Improving Autonomous Vehicle Geolocalisation Using Vision-Language Matching</h3>
+    <p>GeoVLM leverages the zero-shot capabilities of vision-language models to enable interpretable cross-view geo-localisation. It enhances match accuracy on benchmarks like VIGOR and CVUK using a trainable reranking method. [<a href="https://arxiv.org/abs/2505.13669" target="_blank">View Paper</a>]</p>
+  </div>
 
-    header p {
-      font-size: 1rem;
-      color: #ccc;
-    }
-
-    section {
-      padding: 2rem 10%;
-      background-color: #fff;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.4rem;
-      margin-bottom: 1.2rem;
-      color: var(--primary-color);
-    }
-
-    .project {
-      background: #fefefe;
-      padding: 1.2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      margin-bottom: 2rem;
-    }
-
-    .project h3 {
-      color: var(--accent-color);
-      margin-top: 0;
-    }
-
-    a {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .video-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-
-    .video-item {
-      flex: 1 1 300px;
-      max-width: 400px;
-      text-align: center;
-    }
-
-    .video-item h4 {
-      margin-bottom: 10px;
-      color: var(--primary-color);
-    }
-
-    video {
-      width: 100%;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .small-video {
-      width: 70%;
-      max-width: 320px;
-      margin: 1rem auto;
-      display: block;
-    }
-
-    p {
-      margin-bottom: 0.7rem;
-    }
-
-    @media (max-width: 768px) {
-      section {
-        padding: 1.5rem;
-      }
-
-      header img {
-        width: 120px;
-        height: 120px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="Barkin_photo.jpeg" alt="Barkin Dagda" />
-    <h1>Barkin Dagda</h1>
-    <p>AI & Robotics Researcher · PhD in Automotive Engineering</p>
-  </header>
-
-  <section>
-    <h2>Qualifications & Awards</h2>
-    <p>2024 – PhD Foundership Award</p>
-    <p>2022–2026 – PhD in Automotive Engineering, University of Surrey (CAV Lab)</p>
-    <p>2021–2022 – MSc in Electronic Engineering, University of Surrey (Distinction)</p>
-    <p>2017–2021 – BEng (Hons) in Mechanical Engineering, University of Surrey (First Class)</p>
-  </section>
-
-  <section>
-    <h2>Experience</h2>
-    <p>Researcher at Connected & Autonomous Vehicles Lab, University of Surrey</p>
-    <p>Research Assistant – Digital Twins and Warehouse Robotics</p>
-
-    <div class="project">
-      <h3>Agile Loop Ltd.</h3>
-      <p><strong>Role:</strong> Research Scientist → Senior Research Scientist</p>
-      <p>Worked on advanced LLM/VLM systems involving fine-tuning, RAG, function calling, and autonomous task agents. Led development on SAM-Desktop (adopted by Lenovo), including architecture design and back-end implementation. Drove cross-functional collaboration across software, AI, and data teams.</p>
-      <h4>Video Demo</h4>
-      <video controls class="small-video">
-        <source src="agile_loop.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>HighwayLLM</h3>
-      <p>LLM-powered waypoint prediction with reinforcement learning for autonomous highway driving. Integrates LLM reasoning with interpretable planning and PID control.  
-      [<a href="https://arxiv.org/html/2405.13547v1" target="_blank">View Paper</a>]</p>
-    </div>
-
-    <div class="project">
-      <h3>Behavioral Cloning Models Reality Check</h3>
-      <p>Real-world evaluation of vision-based perception systems for autonomous vehicle steering. Data collected with scaled vehicles; methods show high steering accuracy.  
-      [<a href="https://arxiv.org/abs/2409.07218" target="_blank">View Paper</a>]</p>
-    </div>
-
-    <div class="project">
-      <h3>Autonomous Nuclear Material Transportation</h3>
-      <p><strong>Client:</strong> Cyclopic (Sellafield Gamechangers)</p>
-      <p>Feasibility study for GPS-denied autonomous transport using mesh networks, multi-sensor fusion, RL planning, and high-redundancy control systems.</p>
-    </div>
-
-    <div class="project">
-      <h3>GeoVLM</h3>
-      <p>Vision-language model for cross-view geolocalisation with zero-shot capabilities and re-ranking optimization.  
-      [<a href="https://github.com/barkindagda/GeoVLM" target="_blank">View Code</a>]</p>
-    </div>
-
-    <div class="project">
-      <h3>Cyclopic AMR Digital Twin</h3>
-      <p>Digital twin with intelligent load balancing and wheel height control for stable warehouse robotics. Implements AI-driven balancing and orientation correction.</p>
-
-      <div class="video-container">
-        <div class="video-item">
-          <h4>Success Case</h4>
-          <video controls>
-            <source src="cyclopic_success_case.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="video-item">
-          <h4>Fail Case</h4>
-          <video controls>
-            <source src="cyclopic_fail_case.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
+  <div class="project">
+    <h3>Cyclopic AMR Digital Twin Model Load Balancing</h3>
+    <p>Digital twin model for an autonomous warehouse robot with advanced load balancing and wheel height control, enabling stability in delivery operations. AI algorithms provide dynamic balancing and precise pitch/roll control for improved efficiency.</p>
+    <div class="video-container">
+      <div class="video-item">
+        <h4>Success Case</h4>
+        <video controls>
+          <source src="cyclopic_success_case.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
-
-      <h4>Physical Robot Demo</h4>
-      <video controls class="small-video">
-        <source src="robot.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="video-item">
+        <h4>Fail Case</h4>
+        <video controls>
+          <source src="cyclopic_fail_case.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
-  </section>
-</body>
-</html>
+  </div>
+
+  <div class="project">
+    <h3>VLM-Guided Reinforcement Learning for Emergency Braking in Occluded Pedestrian Crossing</h3>
+    <p>This work investigates the use of vision-language models (VLMs) as semantic priors to guide reinforcement learning policies in high-risk traffic scenarios. The focus is on emergency braking in occluded pedestrian crossings, where traditional vision systems struggle with uncertainty. Our approach combines zero-shot VLM reasoning with an RL agent to learn safe and proactive braking behaviors under limited observability. This hybrid system aims to reduce false negatives and improve response time by using the VLM’s understanding of pedestrian context and likely movements, even in visually ambiguous situations. Experimental results in simulated urban driving environments demonstrate significant improvements in braking accuracy and safety compared to traditional RL-only or vision-only systems.</p>
+  </div>
+
+</section>
