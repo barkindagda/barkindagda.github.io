@@ -72,44 +72,87 @@
       margin: 1rem auto;
     }
 
-    /* --- NEW GALLERY STYLES --- */
-    .gallery-grid {
-      display: grid;
-      /* Creates a responsive grid that fits as many 250px columns as possible */
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 1rem;
-    }
-    .gallery-item {
-      background: white;
+    /* --- SLIDESHOW STYLES --- */
+    .slideshow-container {
+      max-width: 800px;
+      position: relative;
+      margin: auto;
+      background: #000; /* Black background for photos */
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
-    .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+      position: relative;
     }
-    .gallery-item img {
+
+    /* Styling the images inside the slideshow */
+    .mySlides img {
       width: 100%;
-      height: 180px; /* Fixed height ensures grid stays even */
-      object-fit: cover; /* Crops image slightly to fill the square without distortion */
+      height: 500px; /* Fixed height for consistency */
+      object-fit: contain; /* Ensures the whole image is seen without stretching */
       display: block;
     }
-    .gallery-caption {
-      padding: 10px;
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0,0,0,0.3);
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
       text-align: center;
+      background: rgba(0, 0, 0, 0.6);
     }
-    .gallery-caption h4 {
-      margin: 0 0 5px 0;
-      color: #2c3e50;
-      font-size: 1rem;
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
     }
-    .gallery-caption p {
-      margin: 0;
-      font-size: 0.85rem;
-      color: #666;
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+    
+    /* Responsive height for smaller screens */
+    @media only screen and (max-width: 768px) {
+      .mySlides img {
+        height: 300px;
+      }
     }
   </style>
 </head>
@@ -229,34 +272,63 @@
 
   <section>
     <h2>Talks & Conferences</h2>
-    <div class="gallery-grid">
-      
-      <div class="gallery-item">
-        <img src="talk1.jpg" alt="Presentation at University of Surrey">
-        <div class="gallery-caption">
-          <h4>CAV Lab Research Update</h4>
-          <p>University of Surrey, 2024</p>
-        </div>
+    
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <img src="automateUK.jpeg" alt="Automate UK">
+        <div class="text">Automate UK Event</div>
       </div>
 
-      <div class="gallery-item">
-        <img src="talk2.jpg" alt="Conference Talk">
-        <div class="gallery-caption">
-          <h4>IEEE Conference Presentation</h4>
-          <p>Automotive Engineering Session</p>
-        </div>
+      <div class="mySlides fade">
+        <img src="Catapult_digital twin_summit.jpeg" alt="Catapult Digital Twin Summit">
+        <div class="text">Catapult Digital Twin Summit</div>
       </div>
 
-      <div class="gallery-item">
-        <img src="talk3.jpg" alt="Guest Lecture">
-        <div class="gallery-caption">
-          <h4>Guest Lecture on LLMs</h4>
-          <p>Invited Speaker Series</p>
-        </div>
+      <div class="mySlides fade">
+        <img src="China_talk.jpg" alt="Presentation in China">
+        <div class="text">International Presentation (China)</div>
       </div>
 
+      <div class="mySlides fade">
+        <img src="SAE.jpg" alt="SAE Event">
+        <div class="text">SAE Conference</div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="UoS_talk.jpg" alt="University of Surrey Talk">
+        <div class="text">University of Surrey Talk</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
   </section>
+
+  <script>
+    let slideIndex = 1;
+    // Start the slideshow, and set an automatic timer
+    showSlides(slideIndex);
+    let slideTimer = setInterval(function(){ plusSlides(1) }, 5000); // Change image every 5 seconds
+
+    // Next/previous controls
+    function plusSlides(n) {
+      clearInterval(slideTimer); // Stop auto-play if user clicks manually
+      showSlides(slideIndex += n);
+      slideTimer = setInterval(function(){ plusSlides(1) }, 5000); // Restart auto-play
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex-1].style.display = "block";
+    }
+  </script>
 
 </body>
 </html>
