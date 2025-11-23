@@ -71,6 +71,46 @@
       display: block;
       margin: 1rem auto;
     }
+
+    /* --- NEW GALLERY STYLES --- */
+    .gallery-grid {
+      display: grid;
+      /* Creates a responsive grid that fits as many 250px columns as possible */
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 1rem;
+    }
+    .gallery-item {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 180px; /* Fixed height ensures grid stays even */
+      object-fit: cover; /* Crops image slightly to fill the square without distortion */
+      display: block;
+    }
+    .gallery-caption {
+      padding: 10px;
+      text-align: center;
+    }
+    .gallery-caption h4 {
+      margin: 0 0 5px 0;
+      color: #2c3e50;
+      font-size: 1rem;
+    }
+    .gallery-caption p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #666;
+    }
   </style>
 </head>
 <body>
@@ -185,7 +225,38 @@
       <p><strong>Cyclopic</strong></p>
       <p>A comprehensive feasibility study conducted for Sellafield's Gamechangers Challenge, focusing on secure and reliable systems for autonomous nuclear material transportation in GPS-denied environments. The report evaluates communication solutions (Mesh Networks, SATCOM, and Radio), sensor technologies, localization methods, and collision avoidance strategies. Key contributions include multi-sensor fusion approaches for robust localization, reinforcement learning-based behavioral planning, and redundancy systems to achieve zero-failure transportation of sensitive materials. The study recommends mesh networks for communication reliability, adaptive multi-sensor fusion for localization, and modular reinforcement learning systems for collision avoidance.</p>
     </div>
-
   </section>
+
+  <section>
+    <h2>Talks & Conferences</h2>
+    <div class="gallery-grid">
+      
+      <div class="gallery-item">
+        <img src="talk1.jpg" alt="Presentation at University of Surrey">
+        <div class="gallery-caption">
+          <h4>CAV Lab Research Update</h4>
+          <p>University of Surrey, 2024</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="talk2.jpg" alt="Conference Talk">
+        <div class="gallery-caption">
+          <h4>IEEE Conference Presentation</h4>
+          <p>Automotive Engineering Session</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="talk3.jpg" alt="Guest Lecture">
+        <div class="gallery-caption">
+          <h4>Guest Lecture on LLMs</h4>
+          <p>Invited Speaker Series</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 </body>
 </html>
